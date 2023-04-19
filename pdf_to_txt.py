@@ -9,8 +9,8 @@ def pdf_to_txt(pdf_path, save_path):
     pdf_manager = PyPDF2.PdfReader(pdf_obj)
 
     pdf_pages = len(pdf_manager.pages)
-    for page in range(1):
-        pdf_page_data = pdf_manager.pages[5]
+    for page in range(pdf_pages):
+        pdf_page_data = pdf_manager.pages[page]
 
         pdf_text = pdf_page_data.extract_text()
         pdf_text = re.sub(r'(.) ',r'\1', pdf_text)
